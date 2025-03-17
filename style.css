@@ -1,0 +1,383 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffcccb;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 30px;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;               /* Makes it a flex container */
+    justify-content: space-between; /* Distributes space between brand and nav items */
+    align-items: center;         /* Vertically centers the items */
+    background: white;
+    padding: 10px 20px;          /* Added horizontal padding for spacing */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .navbar .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #7b3f00; /* Brown color for "ChocoBar" */
+  }
+  .navbar ul {
+    list-style: none;
+    display: flex;               /* Ensures the nav items are in a row */
+    margin: 0;                   /* Remove any default margins */
+    padding: 0;
+  }
+  .navbar li {
+    margin: 0 15px;
+  }
+  .navbar a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s;
+  }
+  .navbar a:hover, .navbar a.active {
+    color: #ffcccb;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: #7b3f00;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px 60px;
+    margin-top: 60px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 50px; /* Increased space between images */
+    justify-content: center;
+    padding: 10px 0; /* Optional: Adds some padding on top and bottom of the carousel */
+  }
+  
+  .carousel img {
+    width: auto;          /* Ensures image maintains its aspect ratio */
+    max-width: 400px;     /* Limits the maximum width */
+    height: auto;         /* Ensures the height adjusts according to the aspect ratio */
+    max-height: 400px;    /* Limits the maximum height */
+    object-fit: cover;    /* Prevents stretching and ensures the image covers the area while maintaining its aspect ratio */
+    border-radius: 8px;   /* Keeps rounded corners */
+  }
+  
+  
+  /* Page Header for inner pages */
+  .page-header {
+    background: #7b3f00;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    margin-top: 60px;
+  }
+  .page-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 0px !important;
+  }
+  
+  /* Curved bottom for headers using SVG */
+  .hero::after, .page-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 80'%3E%3Cpath fill='%23ffcccb' d='M0 0 C150 80 450 0 600 80 L600 80 L0 80 Z'/%3E%3C/svg%3E") repeat-x;
+    background-size: cover;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+  }
+  
+  /* Sections */
+  section { 
+    padding: 60px 20px;
+    background: #fff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* Gallery */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Product Cards (Buy Page) */
+  .product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .product-card {
+    background: #ffe5d9;
+    padding: 20px;
+    border-radius: 12px; /* Increased the radius for rounded corners */
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Ensures text and button stack vertically */
+    justify-content: space-between; /* Provides space between the text and the button */
+    height: 420px; /* Increased height of the card */
+  }
+  .product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .product-card h3 {
+    margin-bottom: 0px;
+  }
+  
+  /* Adjusting the order button to not interfere */
+  .order-button {
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+  }
+  
+  /* Product Detail */
+  .product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-detail img {
+    max-width: 500px;
+    border-radius: 8px;
+  }
+  .product-info {
+    max-width: 500px;
+  }
+  .product-info h2 {
+    margin-bottom: 10px;
+  }
+  .product-info p {
+    margin-bottom: 15px;
+  }
+  
+  /* Flavor Options */
+  .flavor-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .flavor-option {
+    text-align: center;
+  }
+  .flavor-option img {
+    display: block;
+    margin: 0 auto 5px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  /* Order Button */
+  .order-button {
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+    background: #7b3f00;
+    color: #fff;
+    padding: 10px 25px; /* Reduced horizontal padding to make the button narrower */
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background 0.3s;
+    padding: 12px 30px; /* Increase padding for better touch responsiveness */
+  font-size: 1.2em; /* Adjust font size for readability */
+  }
+  .order-button:hover {
+    background: #8c4b00;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  .contact-form button {
+    width: 100%;
+    background: #7b3f00;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+  }
+  .contact-form button:hover {
+    background: #8c4b00;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #7b3f00;
+    color: #fff;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .product-detail {
+      flex-direction: column;
+    }
+    .navbar ul {
+      flex-direction: column;
+    }
+    .product-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  /* Container for each section */
+
+#about .container {
+  padding: 0; /* No extra padding */
+  margin: 0;
+  width: 100%;
+}
+
+/* Each section should span the full viewport width and height */
+.our-story, .chef, .tempered-chocolate {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* This centers the 100vw element flush to the viewport edges */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Background color/gradient for each section */
+.our-story {
+  background: linear-gradient(to right, #b7d40d, #13efa2);
+}
+
+.chef {
+  background: linear-gradient(to right, #c615c9, #ff6347);
+}
+
+.tempered-chocolate {
+  background: linear-gradient(to right, #dbb07e, #ff4500);
+}
+
+/* Image styling */
+.image-left {
+  width: 50%;
+  height: 100%;  /* Ensure the image stretches to full height */
+  overflow: hidden;
+  padding: 5px;
+}
+
+.image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  border-radius: 8px;
+  margin-top: auto;
+}
+
+/* Text styling */
+.text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+  font-size: 2.5rem; /* Make the text bigger */
+  line-height: 1.4;
+}
+
+.text h2 {
+  margin: 0 0 10px 0;
+  font-size: 3rem; /* Make the title bigger */
+}
+
+.text p {
+  font-size: 1.5rem;
+}
+
+/* Gallery styling */
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.about {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.aboutme .chef .tempered-chocolate{
+  text-align: center;
+}
